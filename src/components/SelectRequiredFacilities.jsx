@@ -5,12 +5,13 @@ const onChange = setRequiredFacility => event => setRequiredFacility(event.targe
 const Checkbox = ({ checked, label, setRequiredFacility }) => (
   <div>
     <input
+      id={label.replace(" ", "_")}
       type="checkbox"
       value={label}
       onChange={onChange(setRequiredFacility)}
       checked={checked}
     />
-    <label>{label}</label>
+    <label htmlFor={label.replace(" ", "_")}>{label}</label>
   </div>
 );
 

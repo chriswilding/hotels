@@ -36,4 +36,22 @@ describe("SelectRequiredFacilities", () => {
       .simulate("change", { target: { value: "car park" } });
     expect(setRequiredFacility).toBeCalledWith("car park");
   });
+
+  it("sets an id on the checkbox", () => {
+    expect(
+      component
+        .find("input")
+        .first()
+        .prop("id")
+    ).toEqual("car_park");
+  });
+
+  it("sets a for attribute on the label", () => {
+    expect(
+      component
+        .find("label")
+        .first()
+        .prop("htmlFor")
+    ).toEqual("car_park");
+  });
 });
