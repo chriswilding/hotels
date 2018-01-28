@@ -1,21 +1,31 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import FacilityFilter from "../../src/components/FacilityFilter";
-import hotels from "../../data/example.json";
+import StarRatingSort from "../../src/functionAsChildComponents/StarRatingSort";
 
-describe("FacilityFilter", () => {
+const hotels = [
+  {
+    StarRating: 1
+  },
+  {
+    StarRating: 3
+  },
+  {
+    StarRating: 2
+  }
+];
+
+describe("StarRatingSort", () => {
   let component;
 
-  it("renders all hotels when no facilities are required", () => {
+  it("does not change the order if a sort order is not provided", () => {
     const props = {
-      hotels,
-      requiredFacilities: []
+      hotels
     };
 
     const functionChildComponent = jest.fn(() => <div />);
 
-    component = mount(<FacilityFilter {...props}>{functionChildComponent}</FacilityFilter>);
+    component = mount(<StarRatingSort {...props}>{functionChildComponent}</StarRatingSort>);
 
     expect(functionChildComponent).toBeCalledWith(
       expect.objectContaining({
@@ -24,51 +34,54 @@ describe("FacilityFilter", () => {
     );
   });
 
-  it("renders all hotels with the required facility", () => {
+  it("sorts in ascending order", () => {
     const props = {
       hotels,
-      requiredFacilities: ["car park"]
+      order: "ascending"
     };
 
     const functionChildComponent = jest.fn(() => <div />);
 
-    component = mount(<FacilityFilter {...props}>{functionChildComponent}</FacilityFilter>);
+    component = mount(<StarRatingSort {...props}>{functionChildComponent}</StarRatingSort>);
 
     expect(functionChildComponent).toBeCalledWith(
       expect.objectContaining({
         hotels: [
           {
-            Name: "hotelone",
-            StarRating: 5,
-            Facilities: ["car park", "pool"]
+            StarRating: 1
           },
           {
-            Name: "hoteltwo",
-            StarRating: 3,
-            Facilities: ["car park", "gym"]
+            StarRating: 2
+          },
+          {
+            StarRating: 3
           }
         ]
       })
     );
   });
 
-  it("renders hotels with 2 required facilities", () => {
+  it("sorts in descending order", () => {
     const props = {
       hotels,
-      requiredFacilities: ["car park", "gym"]
+      order: "descending"
     };
 
     const functionChildComponent = jest.fn(() => <div />);
 
-    component = mount(<FacilityFilter {...props}>{functionChildComponent}</FacilityFilter>);
+    component = mount(<StarRatingSort {...props}>{functionChildComponent}</StarRatingSort>);
 
     expect(functionChildComponent).toBeCalledWith(
       expect.objectContaining({
         hotels: [
           {
-            Name: "hoteltwo",
-            StarRating: 3,
-            Facilities: ["car park", "gym"]
+            StarRating: 3
+          },
+          {
+            StarRating: 2
+          },
+          {
+            StarRating: 1
           }
         ]
       })
@@ -78,13 +91,12 @@ describe("FacilityFilter", () => {
   it("other props are passed through to children", () => {
     const props = {
       hotels,
-      requiredFacilities: [],
       otherProp: "example"
     };
 
     const functionChildComponent = jest.fn(() => <div />);
 
-    component = mount(<FacilityFilter {...props}>{functionChildComponent}</FacilityFilter>);
+    component = mount(<StarRatingSort {...props}>{functionChildComponent}</StarRatingSort>);
 
     expect(functionChildComponent).toBeCalledWith(
       expect.objectContaining({

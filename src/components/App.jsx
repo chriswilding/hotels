@@ -1,9 +1,9 @@
 import React from "react";
 
-import FacilityFilter from "./FacilityFilter";
+import FacilityFilter from "../functionAsChildComponents/FacilityFilter";
 import HotelList from "./HotelList";
 import hotels from "../../data/example.json";
-import StarRatingSort from "./StarRatingSort";
+import StarRatingSort from "../functionAsChildComponents/StarRatingSort";
 
 const App = () => (
   <StarRatingSort order="descending" hotels={hotels}>
