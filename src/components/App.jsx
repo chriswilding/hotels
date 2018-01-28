@@ -1,9 +1,8 @@
 import React from "react";
 
-const App = () => (
-  <div>
-    <h1>Hello World!</h1>
-  </div>
-);
+import HotelList from "./HotelList";
+import hotels from "../../data/example.json";
+
+const App = () => <HotelList hotels={hotels} />;
 
 export default App;
