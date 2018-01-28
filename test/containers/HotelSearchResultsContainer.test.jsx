@@ -1,6 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
+import hotels from "../../data/example.json";
 import HotelSearchResultsPageContainer from "../../src/containers/HotelSearchResultsPageContainer";
 
 // There are calls to update() an the enzyme wrapper due to an issue with the child component not
@@ -22,5 +23,11 @@ describe("HotelSearchResultsPageContainer", () => {
       gym: false,
       pool: false
     });
+  });
+
+  it("loads the hotels list", () => {
+    component.update();
+    const page = component.find("HotelSearchResultsPage");
+    expect(page.prop("hotels")).toEqual(hotels);
   });
 });

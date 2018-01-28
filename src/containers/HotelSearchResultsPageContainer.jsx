@@ -13,18 +13,20 @@ class HotelSearchResultsPageContainer extends Component {
   }
 
   componentDidMount() {
-    console.log("component did mount was called");
     const hotelsService = new HotelsService();
-    hotelsService.getFacilityTypes().then(facilityTypes => {
-      const requiredFacilityTypes = facilityTypes.reduce((acc, facilityType) => {
-        acc[facilityType] = false;
-        return acc;
-      }, {});
+    Promise.all([hotelsService.getFacilityTypes(), hotelsService.getHotels()]).then(
+      ([facilityTypes, hotels]) => {
+        const requiredFacilityTypes = facilityTypes.reduce((acc, facilityType) => {
+          acc[facilityType] = false;
+          return acc;
+        }, {});
 
-      this.setState({
-        requiredFacilityTypes
-      });
-    });
+        this.setState({
+          hotels,
+          requiredFacilityTypes
+        });
+      }
+    );
   }
 
   render() {
