@@ -7,7 +7,8 @@ describe("Hotel", () => {
   let component = shallow(<Hotel />);
   const props = {
     Name: "An Awesome Hotel Name",
-    StarRating: 3
+    StarRating: 3,
+    Facilities: ["gym", "pool"]
   };
 
   beforeEach(() => {
@@ -27,5 +28,11 @@ describe("Hotel", () => {
     const starRating = component.find("StarRating");
     expect(starRating.exists()).toBeTruthy();
     expect(starRating.prop("starRating")).toBe(props.StarRating);
+  });
+
+  it("renders a Facilities component", () => {
+    const facilities = component.find("Facilities");
+    expect(facilities.exists()).toBeTruthy();
+    expect(facilities.prop("facilities")).toBe(props.Facilities);
   });
 });
