@@ -11,7 +11,7 @@ describe("Facilities", () => {
     component = shallow(<Facilities facilities={facilities} />);
   });
 
-  it("renders a faciliaties list", () => {
+  it("renders a facilities list", () => {
     expect(component.exists()).toBeTruthy();
   });
 
