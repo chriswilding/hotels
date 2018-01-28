@@ -29,4 +29,10 @@ describe("HotelSearchResultsPageContainer", () => {
     const page = component.find("HotelSearchResultsPage");
     expect(page.prop("hotels")).toEqual(hotels);
   });
+
+  it("passes a setOrder callback to theHotelSearchResultsPage", () => {
+    component.update();
+    const page = component.find("HotelSearchResultsPage");
+    expect(page.prop("setOrder")).toBeInstanceOf(Function);
+  });
 });
