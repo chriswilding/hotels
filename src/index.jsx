@@ -3,14 +3,14 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { render } from "react-dom";
 
-import HotelSearchResultsPage from "./components/HotelSearchResultsPage";
+import HotelSearchResultsPageContainer from "./containers/HotelSearchResultsPageContainer";
 import reducer from "./reducers";
 
 const store = createStore(reducer);
 
 render(
   <Provider store={store}>
-    <HotelSearchResultsPage />
+    <HotelSearchResultsPageContainer />
   </Provider>,
   document.getElementById("root")
 );
