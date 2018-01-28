@@ -30,9 +30,15 @@ describe("HotelSearchResultsPageContainer", () => {
     expect(page.prop("hotels")).toEqual(hotels);
   });
 
-  it("passes a setOrder callback to theHotelSearchResultsPage", () => {
+  it("passes a setOrder callback to the HotelSearchResultsPage", () => {
     component.update();
     const page = component.find("HotelSearchResultsPage");
     expect(page.prop("setOrder")).toBeInstanceOf(Function);
+  });
+
+  it("passes a setRequiredFacility callback to the HotelSearchResultsPage", () => {
+    component.update();
+    const page = component.find("HotelSearchResultsPage");
+    expect(page.prop("setRequiredFacility")).toBeInstanceOf(Function);
   });
 });

@@ -9,10 +9,11 @@ class HotelSearchResultsPageContainer extends Component {
     this.state = {
       hotels: [],
       order: "descending",
-      requiredFacilities: []
+      requiredFacilities: {}
     };
 
     this.setOrder = this.setOrder.bind(this);
+    this.setRequiredFacility = this.setRequiredFacility.bind(this);
   }
 
   componentDidMount() {
@@ -36,17 +37,34 @@ class HotelSearchResultsPageContainer extends Component {
     const requiredFacilities = Object.keys(this.state.requiredFacilities).filter(facility => {
       return this.state.requiredFacilities[facility];
     });
+
     return (
       <HotelSearchResultsPage
         {...this.state}
+        availableFacilities={this.state.requiredFacilities}
         requiredFacilities={requiredFacilities}
         setOrder={this.setOrder}
+        setRequiredFacility={this.setRequiredFacility}
       />
     );
   }
 
   setOrder(order) {
     this.setState({ order });
+  }
+
+  setRequiredFacility(facility) {
+    this.setState(prevState => {
+      const newState = {
+        requiredFacilities: {
+          ...prevState.requiredFacilities
+        }
+      };
+
+      newState.requiredFacilities[facility] = !prevState.requiredFacilities[facility];
+
+      return newState;
+    });
   }
 }
 
