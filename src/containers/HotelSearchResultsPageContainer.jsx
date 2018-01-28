@@ -8,7 +8,8 @@ class HotelSearchResultsPageContainer extends Component {
     super(props);
     this.state = {
       hotels: [],
-      requiredFacilityTypes: []
+      order: "descending",
+      requiredFacilities: []
     };
   }
 
@@ -16,21 +17,24 @@ class HotelSearchResultsPageContainer extends Component {
     const hotelsService = new HotelsService();
     Promise.all([hotelsService.getFacilityTypes(), hotelsService.getHotels()]).then(
       ([facilityTypes, hotels]) => {
-        const requiredFacilityTypes = facilityTypes.reduce((acc, facilityType) => {
+        const requiredFacilities = facilityTypes.reduce((acc, facilityType) => {
           acc[facilityType] = false;
           return acc;
         }, {});
 
         this.setState({
           hotels,
-          requiredFacilityTypes
+          requiredFacilities
         });
       }
     );
   }
 
   render() {
-    return <HotelSearchResultsPage {...this.state} />;
+    const requiredFacilities = Object.keys(this.state.requiredFacilities).filter(facility => {
+      return this.state.requiredFacilities[facility];
+    });
+    return <HotelSearchResultsPage {...this.state} requiredFacilities={requiredFacilities} />;
   }
 }
 

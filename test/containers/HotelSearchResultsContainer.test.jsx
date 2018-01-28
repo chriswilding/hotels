@@ -17,8 +17,7 @@ describe("HotelSearchResultsPageContainer", () => {
 
   it("loads the facility types list", () => {
     component.update();
-    const page = component.find("HotelSearchResultsPage");
-    expect(page.prop("requiredFacilityTypes")).toEqual({
+    expect(component.state("requiredFacilities")).toEqual({
       "car park": false,
       gym: false,
       pool: false

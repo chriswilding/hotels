@@ -4,10 +4,10 @@ import FacilityFilter from "../functionAsChildComponents/FacilityFilter";
 import HotelList from "./HotelList";
 import StarRatingSort from "../functionAsChildComponents/StarRatingSort";
 
-const HotelSearchResultsPage = ({ hotels }) => (
-  <StarRatingSort order="descending" hotels={hotels}>
+const HotelSearchResultsPage = ({ hotels, order, requiredFacilities }) => (
+  <StarRatingSort order={order} hotels={hotels}>
     {props => (
-      <FacilityFilter {...props} requiredFacilities={["car park"]}>
+      <FacilityFilter {...props} requiredFacilities={requiredFacilities}>
         {props => <HotelList {...props} />}
       </FacilityFilter>
     )}
