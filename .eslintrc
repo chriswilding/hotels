@@ -3,6 +3,6 @@
     "browser": true,
     "jest/globals": true
   },
-  "extends": ["airbnb", "plugin:jest/recommended"],
+  "extends": ["airbnb", "plugin:jest/recommended", "prettier"],
   "plugins": ["jest"]
 }
