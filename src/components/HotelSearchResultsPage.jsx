@@ -5,7 +5,7 @@ import HotelList from "./HotelList";
 import hotels from "../../data/example.json";
 import StarRatingSort from "../functionAsChildComponents/StarRatingSort";
 
-const App = () => (
+const HotelSearchResultsPage = () => (
   <StarRatingSort order="descending" hotels={hotels}>
     {props => (
       <FacilityFilter {...props} requiredFacilities={["car park"]}>
@@ -15,4 +15,4 @@ const App = () => (
   </StarRatingSort>
 );
 
-export default App;
+export default HotelSearchResultsPage;
