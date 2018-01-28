@@ -8,23 +8,23 @@ export default {
       {
         exclude: /node_modules/,
         loader: 'babel-loader',
-        test: /\.(js|jsx)$/
-      }
-    ]
+        test: /\.(js|jsx)$/,
+      },
+    ],
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
       inject: 'body',
-      template: './public/index.html'
-    })
+      template: './public/index.html',
+    }),
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
-  }
-}
+    extensions: ['.js', '.jsx'],
+  },
+};
 
