@@ -1,8 +1,8 @@
 import React from "react";
 
-const SelectSortOrder = () => {
+const SelectSortOrder = ({ order }) => {
   return (
-    <select>
+    <select value={order}>
       <option value="default">Default</option>
       <option value="descending">Highest to lowest</option>
       <option value="ascending">Lowest to highest</option>
