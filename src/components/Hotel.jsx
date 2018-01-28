@@ -1,9 +1,12 @@
 import React from "react";
 
-const Hotel = ({ Name }) => {
+import StarRating from "./StarRating";
+
+const Hotel = ({ Name: name, StarRating: starRating }) => {
   return (
     <div>
-      <h2>{Name}</h2>
+      <h2>{name}</h2>
+      <StarRating starRating={starRating} />
     </div>
   );
 };
