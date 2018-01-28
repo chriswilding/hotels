@@ -17,17 +17,19 @@ const Checkbox = ({ checked, label, setRequiredFacility }) => (
 
 const SelectRequiredFacilities = ({ availableFacilities, setRequiredFacility }) => {
   return (
-    <fieldset>
-      <legend>Pick the facilities you want</legend>
-      {Object.keys(availableFacilities).map(facility => (
-        <Checkbox
-          key={facility}
-          checked={availableFacilities[facility]}
-          label={facility}
-          setRequiredFacility={setRequiredFacility}
-        />
-      ))}
-    </fieldset>
+    <div className="select-required-facilities">
+      <fieldset>
+        <legend>Select the hotel facilities you want:</legend>
+        {Object.keys(availableFacilities).map(facility => (
+          <Checkbox
+            key={facility}
+            checked={availableFacilities[facility]}
+            label={facility}
+            setRequiredFacility={setRequiredFacility}
+          />
+        ))}
+      </fieldset>
+    </div>
   );
 };
 

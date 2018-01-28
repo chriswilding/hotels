@@ -8,7 +8,7 @@ class HotelSearchResultsPageContainer extends Component {
     super(props);
     this.state = {
       hotels: [],
-      order: "descending",
+      order: "default",
       requiredFacilities: {}
     };
 

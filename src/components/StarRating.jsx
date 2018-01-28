@@ -15,11 +15,7 @@ function buildStarRatingString(starRating) {
 }
 
 const StarRating = ({ starRating }) => {
-  return (
-    <div>
-      <span>{buildStarRatingString(starRating)}</span>
-    </div>
-  );
+  return <div className="star-rating">{buildStarRatingString(starRating)}</div>;
 };
 
 export default StarRating;

@@ -1,0 +1,14 @@
+.hotel {
+  border-radius: .5 * $spacing-unit;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 2 * $spacing-unit 0;
+
+  &__content {
+    padding: $spacing-unit 2 * $spacing-unit;
+  }
+
+  &__name {
+    font-size: 4 * $spacing-unit;
+    margin: $spacing-unit 0;
+  }
+}
