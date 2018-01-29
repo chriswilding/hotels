@@ -3,6 +3,6 @@ import { render } from "react-dom";
 
 import HotelSearchResultsPageContainer from "./containers/HotelSearchResultsPageContainer";
 
-import style from "./styles/index.scss";
+import "./styles/index.scss";
 
 render(<HotelSearchResultsPageContainer />, document.getElementById("root"));

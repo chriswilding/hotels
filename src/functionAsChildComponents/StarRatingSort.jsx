@@ -1,5 +1,3 @@
-import React from "react";
-
 const orders = {
   ascending: (hotelA, hotelB) => hotelA.StarRating - hotelB.StarRating,
   descending: (hotelA, hotelB) => hotelB.StarRating - hotelA.StarRating

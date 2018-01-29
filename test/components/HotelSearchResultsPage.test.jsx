@@ -6,9 +6,15 @@ import hotels from "../../data/example.json";
 
 describe("HotelSearchResultsPage", () => {
   it("renders a HotelList", () => {
-    const component = mount(
-      <HotelSearchResultsPage availableFacilities={{}} hotels={hotels} requiredFacilities={[]} />
-    );
+    const props = {
+      availableFacilities: {},
+      order: "default",
+      hotels,
+      requiredFacilities: [],
+      setOrder: jest.fn(),
+      setRequiredFacility: jest.fn()
+    };
+    const component = mount(<HotelSearchResultsPage {...props} />);
     expect(component.find("HotelList").exists()).toBeTruthy();
   });
 
@@ -18,7 +24,8 @@ describe("HotelSearchResultsPage", () => {
       order: "ascending",
       hotels,
       requiredFacilities: [],
-      setOrder: jest.fn()
+      setOrder: jest.fn(),
+      setRequiredFacility: jest.fn()
     };
     const component = mount(<HotelSearchResultsPage {...props} />);
     const selectSortOrder = component.find("SelectSortOrder");

@@ -4,7 +4,8 @@ import { shallow } from "enzyme";
 import Hotel from "../../src/components/Hotel";
 
 describe("Hotel", () => {
-  let component = shallow(<Hotel />);
+  let component;
+
   const props = {
     Name: "An Awesome Hotel Name",
     StarRating: 3,

@@ -33,22 +33,6 @@ class HotelSearchResultsPageContainer extends Component {
     );
   }
 
-  render() {
-    const requiredFacilities = Object.keys(this.state.requiredFacilities).filter(facility => {
-      return this.state.requiredFacilities[facility];
-    });
-
-    return (
-      <HotelSearchResultsPage
-        {...this.state}
-        availableFacilities={this.state.requiredFacilities}
-        requiredFacilities={requiredFacilities}
-        setOrder={this.setOrder}
-        setRequiredFacility={this.setRequiredFacility}
-      />
-    );
-  }
-
   setOrder(order) {
     this.setState({ order });
   }
@@ -65,6 +49,22 @@ class HotelSearchResultsPageContainer extends Component {
 
       return newState;
     });
+  }
+
+  render() {
+    const requiredFacilities = Object.keys(this.state.requiredFacilities).filter(
+      facility => this.state.requiredFacilities[facility]
+    );
+
+    return (
+      <HotelSearchResultsPage
+        {...this.state}
+        availableFacilities={this.state.requiredFacilities}
+        requiredFacilities={requiredFacilities}
+        setOrder={this.setOrder}
+        setRequiredFacility={this.setRequiredFacility}
+      />
+    );
   }
 }
 

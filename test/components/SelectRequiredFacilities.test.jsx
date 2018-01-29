@@ -26,7 +26,7 @@ describe("SelectRequiredFacilities", () => {
   });
 
   it("renders 3 checkboxes", () => {
-    expect(component.find("input").length).toEqual(3);
+    expect(component.find("input")).toHaveLength(3);
   });
 
   it("calls the setRequiredFacility callback on change", () => {

@@ -6,10 +6,12 @@ import hotels from "../../data/example.json";
 // retrieving the data using a network request)
 class StubHotelsService {
   getHotels() {
+    // eslint-disable-line class-methods-use-this
     return Promise.resolve(hotels);
   }
 
   getFacilityTypes() {
+    // eslint-disable-line class-methods-use-this
     return Promise.resolve(["car park", "gym", "pool"]);
   }
 }

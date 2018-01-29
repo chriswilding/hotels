@@ -16,7 +16,7 @@ describe("HotelList", () => {
   });
 
   it("renders 3 hotel child components", () => {
-    const hotels = component.find("Hotel");
-    expect(hotels.length).toBe(3);
+    const hotelComponents = component.find("Hotel");
+    expect(hotelComponents).toHaveLength(3);
   });
 });

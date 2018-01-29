@@ -16,8 +16,6 @@ const hotels = [
 ];
 
 describe("StarRatingSort", () => {
-  let component;
-
   it("does not change the order if a sort order is not provided", () => {
     const props = {
       hotels
@@ -25,7 +23,7 @@ describe("StarRatingSort", () => {
 
     const functionChildComponent = jest.fn(() => <div />);
 
-    component = mount(<StarRatingSort {...props}>{functionChildComponent}</StarRatingSort>);
+    mount(<StarRatingSort {...props}>{functionChildComponent}</StarRatingSort>);
 
     expect(functionChildComponent).toBeCalledWith(
       expect.objectContaining({
@@ -42,7 +40,7 @@ describe("StarRatingSort", () => {
 
     const functionChildComponent = jest.fn(() => <div />);
 
-    component = mount(<StarRatingSort {...props}>{functionChildComponent}</StarRatingSort>);
+    mount(<StarRatingSort {...props}>{functionChildComponent}</StarRatingSort>);
 
     expect(functionChildComponent).toBeCalledWith(
       expect.objectContaining({
@@ -69,7 +67,7 @@ describe("StarRatingSort", () => {
 
     const functionChildComponent = jest.fn(() => <div />);
 
-    component = mount(<StarRatingSort {...props}>{functionChildComponent}</StarRatingSort>);
+    mount(<StarRatingSort {...props}>{functionChildComponent}</StarRatingSort>);
 
     expect(functionChildComponent).toBeCalledWith(
       expect.objectContaining({
@@ -96,7 +94,7 @@ describe("StarRatingSort", () => {
 
     const functionChildComponent = jest.fn(() => <div />);
 
-    component = mount(<StarRatingSort {...props}>{functionChildComponent}</StarRatingSort>);
+    mount(<StarRatingSort {...props}>{functionChildComponent}</StarRatingSort>);
 
     expect(functionChildComponent).toBeCalledWith(
       expect.objectContaining({

@@ -5,8 +5,6 @@ import FacilityFilter from "../../src/functionAsChildComponents/FacilityFilter";
 import hotels from "../../data/example.json";
 
 describe("FacilityFilter", () => {
-  let component;
-
   it("renders all hotels when no facilities are required", () => {
     const props = {
       hotels,
@@ -15,7 +13,7 @@ describe("FacilityFilter", () => {
 
     const functionChildComponent = jest.fn(() => <div />);
 
-    component = mount(<FacilityFilter {...props}>{functionChildComponent}</FacilityFilter>);
+    mount(<FacilityFilter {...props}>{functionChildComponent}</FacilityFilter>);
 
     expect(functionChildComponent).toBeCalledWith(
       expect.objectContaining({
@@ -32,7 +30,7 @@ describe("FacilityFilter", () => {
 
     const functionChildComponent = jest.fn(() => <div />);
 
-    component = mount(<FacilityFilter {...props}>{functionChildComponent}</FacilityFilter>);
+    mount(<FacilityFilter {...props}>{functionChildComponent}</FacilityFilter>);
 
     expect(functionChildComponent).toBeCalledWith(
       expect.objectContaining({
@@ -60,7 +58,7 @@ describe("FacilityFilter", () => {
 
     const functionChildComponent = jest.fn(() => <div />);
 
-    component = mount(<FacilityFilter {...props}>{functionChildComponent}</FacilityFilter>);
+    mount(<FacilityFilter {...props}>{functionChildComponent}</FacilityFilter>);
 
     expect(functionChildComponent).toBeCalledWith(
       expect.objectContaining({
@@ -84,7 +82,7 @@ describe("FacilityFilter", () => {
 
     const functionChildComponent = jest.fn(() => <div />);
 
-    component = mount(<FacilityFilter {...props}>{functionChildComponent}</FacilityFilter>);
+    mount(<FacilityFilter {...props}>{functionChildComponent}</FacilityFilter>);
 
     expect(functionChildComponent).toBeCalledWith(
       expect.objectContaining({

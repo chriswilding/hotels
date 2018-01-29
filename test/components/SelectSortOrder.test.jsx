@@ -5,7 +5,7 @@ import SelectSortOrder from "../../src/components/SelectSortOrder";
 
 describe("SelectSortOrder", () => {
   let component;
-  let setOrder = jest.fn();
+  const setOrder = jest.fn();
 
   beforeEach(() => {
     component = shallow(<SelectSortOrder order="ascending" setOrder={setOrder} />);
@@ -16,7 +16,7 @@ describe("SelectSortOrder", () => {
   });
 
   it("renders 3 options", () => {
-    expect(component.find("option").length).toEqual(3);
+    expect(component.find("option")).toHaveLength(3);
   });
 
   it("sets the value to the order", () => {
