@@ -41,9 +41,9 @@ done to get it into a better shape.
 ### CI/CD/Deployment
 
 The application does not currently have CI setup to run lint and unit tests.
-This should be setup as a priority to ensure a passing build  is maintained.
+This should be setup as a priority to ensure a passing build is maintained.
 
-There are lots of deployment options. Currently the application is only render
+There are lots of deployment options. Currently the application is only rendered
 client side which means all assets can be compiled statically and served from a
 standard webserver, nginx for example, would make a good choice.
 
@@ -51,12 +51,12 @@ standard webserver, nginx for example, would make a good choice.
 ### Performance
 
 * Evaluate the results of tools like [PageSpeed](https://developers.google.com/speed/?hl=en-US&utm_source=PSI&utm_medium=incoming-link&utm_campaign=PSI)
-* Load test applciation to ensure it can handle production loads using tools like [Gatling](https://gatling.io/)
+* Load test application to ensure it can handle production loads using tools like [Gatling](https://gatling.io/)
 
 
 ### Security
 
-Once deployed, headers list below should be set as well as strong Content
+Once deployed, headers listed below should be set as well as strong Content
 Security Policy. Depending on the how the application is deployed this could be
 Nginx configuration or using express for isomorphic/universal rendering this
 can be done with the help of tools such as
@@ -71,7 +71,7 @@ can be done with the help of tools such as
 
 * Add [Structured Data](https://developers.google.com/search/docs/guides/intro-structured-data)
 * Add a robots.txt policy
-* Add isomorphic/universal rendering so web crawlers
+* Add isomorphic/universal rendering for web crawlers
 
 
 ### UX
