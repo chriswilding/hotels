@@ -1,6 +1,11 @@
-import ExtractTextPlugin from "extract-text-webpack-plugin";
+import ExtractTextWebpackPlugin from "extract-text-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from "path";
+
+const extractSass = new ExtractTextWebpackPlugin({
+  filename: "[name].[contenthash].css",
+  disable: process.env.NODE_ENV === "development"
+})
 
 export default {
   entry: "./src/index.jsx",
@@ -13,11 +18,13 @@ export default {
       },
       {
         test: /\.scss/,
-        use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" },
-          { loader: "sass-loader" }
-        ]
+        use: extractSass.extract({
+          use: [
+            { loader: "css-loader" },
+            { loader: "sass-loader" }
+          ],
+          fallback: "style-loader",
+        })
       }
     ]
   },
@@ -31,10 +38,7 @@ export default {
       inject: "body",
       template: "./public/index.html"
     }),
-    new ExtractTextPlugin({
-      filename: "[name].[contenthash].css",
-      disable: process.env.NODE_ENV === "development"
-  })
+    extractSass
   ],
   resolve: {
     extensions: [".js", ".jsx"]
