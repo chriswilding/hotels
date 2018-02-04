@@ -26,6 +26,22 @@ Project is running at http://localhost:8080/
 ...
 ```
 
+## Docker
+
+### Prerequisites
+
+1. [Docker](https://www.docker.com/community-edition)
+
+### Usage
+
+```sh
+$ docker build -t hotels .
+$ docker run --name hotels -d -p 8080:80 hotels
+```
+
+Project is running at http://localhost:8080/
+
+
 ## To Do
 
 This application is far from production ready and there is a lot that can be
