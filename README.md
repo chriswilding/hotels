@@ -48,10 +48,12 @@ This application is far from production ready and there is a lot that can be
 done to get it into a better shape.
 
 * CI/CD/Deployment
+* Monitoring
 * Performance
 * SEO
 * Security
 * UX
+
 
 
 ### CI/CD/Deployment
@@ -62,6 +64,12 @@ This should be setup as a priority to ensure a passing build is maintained.
 There are lots of deployment options. Currently the application is only rendered
 client side which means all assets can be compiled statically and served from a
 standard webserver, nginx for example, would make a good choice.
+
+
+### Monitoring
+
+* Use an APM monitoring tool like New Relic
+* Adding log agregation tooling like LogStash and Kibana
 
 
 ### Performance
