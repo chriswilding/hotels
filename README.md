@@ -1,4 +1,4 @@
-# Hotels
+# Hotels [![Build Status](https://travis-ci.org/ChrisWilding/hotels.svg?branch=master)](https://travis-ci.org/ChrisWilding/hotels)
 
 A demo React app showing filtering and sorting on a list of data items
 
